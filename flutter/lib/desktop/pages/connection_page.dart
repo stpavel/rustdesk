@@ -309,13 +309,13 @@ class _ConnectionPageState extends State<ConnectionPage>
         Expanded(
             child: Column(
           children: [
-            Row(
-              children: [
-                Flexible(child: _buildRemoteIDTextField(context)),
-              ],
-            ).marginOnly(top: 22),
-            SizedBox(height: 12),
-            Divider().paddingOnly(right: 12),
+            // Row(
+            //   children: [
+            //     Flexible(child: _buildRemoteIDTextField(context)),
+            //   ],
+            // ).marginOnly(top: 22),
+            // SizedBox(height: 12),
+            // Divider().paddingOnly(right: 12),
             Expanded(child: PeerTabPage()),
           ],
         ).paddingOnly(left: 12.0)),
