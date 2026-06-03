@@ -1,6 +1,14 @@
 name: Build the flutter version of the RustDesk
 
 on:
+  workflow_dispatch:
+    inputs:
+      upload-artifact:
+        type: boolean
+        default: true
+      upload-tag:
+        type: string
+        default: "nightly"
   workflow_call:
     inputs:
       upload-artifact:
@@ -91,7 +99,7 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           submodules: recursive
-          
+
       - name: Patch custom server
         run: |
           sed -i 's|rs-ny.rustdesk.com|85.112.43.78|g' libs/hbb_common/src/config.rs
